@@ -208,10 +208,55 @@
         height: 14px;
         vertical-align: top;
     }
-
     .total {
         background-position: -200px -290px;
     }
+    .recieved {
+        background-position: -200px -310px;
+    }
+    .saved {
+        background-position: -200px -330px;
+    }
+    .sent {
+        background-position: -200px -350px;
+    }
+    .temp {
+        background-position: -240px -290px;
+    }
+
+    article .list .item {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 37px;
+        border-bottom: 1px solid #f2f2f2;
+        line-height: 37px;
+        cursor: pointer;
+    }
+
+    article .list .item .ico {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 106px;
+        height: 100%;
+        padding-left: 4px;
+    }
+
+    article .list .item .ico .check {
+        display: block;
+        overflow: hidden;
+        background-image: url(//t1.kakaocdn.net/kakaomail_static/mint/img/svc/p320/img_mail_200427.png);
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        background-size: 400px 500px;
+        width: 18px;
+        height: 18px;
+        margin: 9px auto 0;
+        background-position: 0 -410px;
+    }
+
+
 
 </style>
 <body>
@@ -246,13 +291,23 @@
                 <div class="img total"></div>
                 <div class="link">전체메일</div>
             </div>
-            <div class="nav">받은메일함</div>
-            <div class="nav">내게쓴메일함</div>
             <div class="nav">
-                <div>보낸메일함</div>
+                <div class="img recieved"></div>
+                <div class="link">받은메일함</div>
+            </div>
+            <div class="nav">
+                <div class="img saved"></div>
+                <div class="link">내게쓴메일함</div>
+            </div>
+            <div class="nav">
+                <div class="img sent"></div>
+                <div class="link">보낸메일함</div>
                 <div>수신확인</div>
             </div>
-            <div class="nav">임시보관함</div>
+            <div class="nav">
+                <div class="img temp"></div>
+                <div class="link">임시보관함</div>
+            </div>
         </div>
         <div class="nav">
             <div>cyber-i</div>
@@ -277,7 +332,18 @@
 
         </div>
     </nav> <!-- 메뉴 -->
-    <article></article> <!-- 본문 -->
+    <article>
+        <div class="list">
+            <div class="item">
+                <div class="ico">
+                    <span class="check"></span>
+                </div>
+                <div class="from">GitHub</div>
+                <div class="title">[GitHub] Please verify your email address.</div>
+                <div class="date">21.04.16 14:51</div>
+            </div>
+        </div>
+    </article> <!-- 본문 -->
     <footer></footer> <!-- 끝머리 -->
 </body>
 </html>
