@@ -2,9 +2,282 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>kakaomail</title>
 </head>
-<body>
+<style>
+    html{
+        height:100%
+    }
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{
+        margin:0;
+        padding:0;
+    }
 
+    fieldset, img {
+        border: 0 none;
+    }
+
+    dl, ul, ol, menu, li {
+        list-style: none;
+    }
+
+    blockquote, q {
+        quotes: none;
+    }
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+    input, select, textarea, button {
+        vertical-align: middle;
+    }
+
+    input::-ms-clear {
+        display: none;
+    }
+
+    button {
+        border: 0 none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    button::-moz-focus-inner {
+        padding: 0;
+    }
+
+    body {
+        height: 100%;
+        background: #fff;
+    }
+
+    body, th, td, input, select, textarea, button {
+        font-size: 14px;
+        line-height: 1.5;
+        font-family: 'AppleSDGothicNeo-Light', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+        color: #111;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:active, a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        background-color: transparent;
+    }
+
+    address, caption, cite, code, dfn, em, var {
+        font-style: normal;
+        font-weight: normal;
+    }
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 63px;
+        background-color: #fff;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    nav {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        bottom: 0;
+        width: 240px;
+        border-right: 1px solid #eee;
+    }
+    article {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        padding-top: 64px;
+        padding-left: 241px;
+        box-sizing: border-box;
+    }
+    nav .button {
+        overflow: hidden;
+        position: relative;
+        padding: 14px 19px 0 20px;
+        background-color: #fff;
+    }
+    nav .button .btn {
+        overflow: hidden;
+        float: left;
+        position: relative;
+        width: 100px;
+        height: 38px;
+        padding-top: 3px;
+        border-left: 0;
+        border-radius: 0 4px 4px 0;
+        font-weight: bold;
+        font-size: 15px;
+        background-color: #fec1b3;
+    }
+    nav .button .btn_write {
+        width: 98px;
+        border-left: 1px solid rgba(0,0,0,.02);
+        border-right: 0;
+        border-radius: 4px 0 0 4px;
+    }
+    nav .button .btn_my {
+        margin-left: 2px;
+        background-color: #ecedf1;
+    }
+    nav .icons {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        padding: 17px 20px 12px;
+        border-bottom: 1px solid rgba(237,237,237,0.8);
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+    nav .icons .icon {
+        position: relative;
+        display: table-cell;
+        width: 37px;
+        text-align: center;
+        color: #414141;
+        vertical-align: top;
+    }
+    nav .icons .icon .img {
+        display: block;
+        overflow: hidden;
+        background-image: url(//t1.kakaocdn.net/kakaomail_static/mint/img/svc/p320/img_mail_200427.png);
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        -webkit-background-size: 400px 500px;
+        background-size: 400px 500px;
+        width: 18px;
+        height: 18px;
+        margin: 0 auto 4px;
+    }
+    .interest {
+        background-position: -140px -310px;
+    }
+    .read {
+        background-position: -160px -310px;
+    }
+    .important {
+        background-position: -140px -350px;
+    }
+    .file {
+        background-position: -160px -350px;
+    }
+
+    nav .icons .icon .txt_util {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: -0.37px;
+        vertical-align: top;
+    }
+
+    nav .navs {
+        margin: 3px 21px 0 19px;
+        padding: 14px 0 0;
+        border-top: 0 none;
+        margin-top: 0;
+    }
+    nav .navs .nav {
+        overflow: hidden;
+        position: relative;
+        height: 21px;
+        padding-bottom: 8px;
+        line-height: 21px;
+        cursor: pointer;
+    }
+
+    nav .navs .nav .img {
+        display: block;
+        overflow: hidden;
+        background-image: url(//t1.kakaocdn.net/kakaomail_static/mint/img/svc/p320/img_mail_200427.png);
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        background-size: 400px 500px;
+        float: left;
+        margin-right: 7px;
+        margin-top: 3px;
+        width: 14px;
+        height: 14px;
+        vertical-align: top;
+    }
+
+    .total {
+        background-position: -200px -290px;
+    }
+
+</style>
+<body>
+    <header>
+        <div>kakaomail</div>
+    </header> <!-- 첫머리 -->
+    <nav>
+        <div class="button">
+            <button class="btn btn_write">메일쓰기</button>
+            <button class="btn btn_my">내게쓰기</button>
+        </div>
+        <div class="icons">
+            <div class="icon">
+                <span class="img interest"></span>
+                <span class="txt_util">관심친구</span>
+            </div>
+            <div class="icon">
+                <span class="img read"></span>
+                <span class="txt_util">안읽음</span>
+            </div>
+            <div class="icon">
+                <span class="img important"></span>
+                <span class="txt_util">중요</span>
+            </div>
+            <div class="icon">
+                <span class="img file"></span>
+                <span class="txt_util">첨부</span>
+            </div>
+        </div>
+        <div class="navs">
+            <div class="nav">
+                <div class="img total"></div>
+                <div class="link">전체메일</div>
+            </div>
+            <div class="nav">받은메일함</div>
+            <div class="nav">내게쓴메일함</div>
+            <div class="nav">
+                <div>보낸메일함</div>
+                <div>수신확인</div>
+            </div>
+            <div class="nav">임시보관함</div>
+        </div>
+        <div class="nav">
+            <div>cyber-i</div>
+            <div>받은메일함</div>
+            <div>내게쓴메일함</div>
+            <div>
+                <div>보낸메일함</div>
+                <div>수신확인</div>
+            </div>
+            <div>임시보관함</div>
+
+        </div>
+        <div class="nav">
+            <div>전체메일</div>
+            <div>받은메일함</div>
+            <div>내게쓴메일함</div>
+            <div>
+                <div>보낸메일함</div>
+                <div>수신확인</div>
+            </div>
+            <div>임시보관함</div>
+
+        </div>
+    </nav> <!-- 메뉴 -->
+    <article></article> <!-- 본문 -->
+    <footer></footer> <!-- 끝머리 -->
 </body>
 </html>
