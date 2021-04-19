@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>yg.jung</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 </head>
 <style>
     html{
@@ -12,69 +14,58 @@
         margin:0;
         padding:0;
     }
-
     fieldset, img {
         border: 0 none;
     }
-
     dl, ul, ol, menu, li {
         list-style: none;
     }
-
     blockquote, q {
         quotes: none;
     }
-
     blockquote:before, blockquote:after, q:before, q:after {
         content: '';
         content: none;
     }
-
     input, select, textarea, button {
         vertical-align: middle;
     }
-
     input::-ms-clear {
         display: none;
     }
-
     button {
         border: 0 none;
         background-color: transparent;
         cursor: pointer;
     }
-
     button::-moz-focus-inner {
         padding: 0;
     }
-
     body {
         height: 100%;
         background: #fff;
     }
-
     body, th, td, input, select, textarea, button {
         font-size: 14px;
         line-height: 1.5;
         font-family: 'AppleSDGothicNeo-Light', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
         color: #111;
     }
-
     a {
         text-decoration: none;
     }
-
     a:active, a:hover {
         text-decoration: underline;
     }
-
     a:active {
         background-color: transparent;
     }
-
     address, caption, cite, code, dfn, em, var {
         font-style: normal;
         font-weight: normal;
+    }
+    input:focus, textarea:focus, select:focus {
+        outline:none;
     }
     header {
         position: absolute;
@@ -113,7 +104,6 @@
         zoom: 1;
         text-align: center;
     }
-
     header .nav .item .img {
         background-image: url(https://ssl.pstatic.net/static/pwe/common/sp_pnb_d4f0e846.png);
         background-size: 312px 256px;
@@ -125,7 +115,6 @@
         zoom: 1;
         z-index: 50;
     }
-
     .mail {
         background-position: -66px -140px;
     }
@@ -179,6 +168,7 @@
     nav .button .btn_my {
         margin-left: 2px;
         background-color: #ecedf1;
+        cursor: default;
     }
     nav .icons {
         display: table;
@@ -227,14 +217,12 @@
     .bill {
         background-position: -200px -370px;
     }
-
     nav .icons .icon .txt_util {
         display: inline-block;
         font-size: 11px;
         letter-spacing: -0.37px;
         vertical-align: top;
     }
-
     nav .navs {
         margin: 3px 21px 0 19px;
         padding: 14px 0 0;
@@ -249,13 +237,9 @@
         line-height: 21px;
         cursor: pointer;
     }
-
-    nav .navs .nav .img {
+    nav .navs .nav i {
         display: block;
         overflow: hidden;
-        background-image: url(//t1.kakaocdn.net/kakaomail_static/mint/img/svc/p320/img_mail_200427.png);
-        background-repeat: no-repeat;
-        text-indent: -9999px;
         background-size: 400px 500px;
         float: left;
         margin-right: 7px;
@@ -263,21 +247,15 @@
         width: 14px;
         height: 14px;
         vertical-align: top;
+        text-align: center;
     }
-    .total {
-        background-position: -200px -290px;
+    nav .navs .nav .link {
+        display: initial;
+        bottom: 0;
     }
-    .recieved {
-        background-position: -200px -310px;
-    }
-    .saved {
-        background-position: -200px -330px;
-    }
-    .sent {
-        background-position: -200px -350px;
-    }
-    .temp {
-        background-position: -240px -290px;
+    nav .navs .nav .link:hover {
+        font-weight: bold;
+        border-bottom: 4px solid #fee500;
     }
     article {
         overflow: hidden;
@@ -297,12 +275,10 @@
         line-height: 37px;
         cursor: pointer;
     }
-
     article .list .item:hover {
         border: 1px solid #a7a7a7;
         border-radius: 5px;
     }
-
     article .list .item .from {
         overflow: hidden;
         position: absolute;
@@ -313,7 +289,6 @@
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-
     article .list .item .title {
         height: 100%;
         margin-left: 140px;
@@ -322,7 +297,6 @@
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-
     article .list .item .date {
         position: absolute;
         top: 0;
@@ -334,7 +308,67 @@
         text-indent: 10px;
         text-align: right;
     }
-
+    article .write {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    article .write .head {
+        position: relative;
+        z-index: 20;
+        min-width: 765px;
+        padding: 14px 28px 12px 15px;
+    }
+    article .write .head button {
+        overflow: hidden;
+        height: 32px;
+        border-radius: 3px;
+        font-size: 13px;
+        width: 69px;
+        border: 1px solid #4b4f55;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    article .write .compose {
+        overflow: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-transition: none;
+        top: 64px;
+        padding: 0 15px 15px 15px;
+    }
+    article .write .compose dt {
+        position: absolute;
+        left: 0;
+        width: 100px;
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+    article .write .compose dd {
+        position: relative;
+        min-height: 34px;
+        margin-left: 100px;
+        border-bottom: 1px solid #efefef;
+        text-align: left;
+    }
+    article .write .compose dd select {
+        border: 0;
+        height: 34px;
+    }
+    article .write .compose dd input {
+        border: 0;
+        width: 100%;
+        height: 34px;
+    }
+    article .write .body {
+        border-top: 1px solid #e6e6e6;
+        padding: 15px;
+    }
+    article .write .body textarea{
+        width: 100%;
+        border: 0px;
+    }
 </style>
 <body>
     <header>
@@ -359,8 +393,8 @@
     </header> <!-- 첫머리 -->
     <nav>
         <div class="button">
-            <button class="btn btn_write">메일쓰기</button>
-            <button class="btn btn_my">내게쓰기</button>
+            <button class="btn btn_write">글쓰기</button>
+            <button class="btn btn_my" disabled>내게쓰기</button>
         </div>
         <div class="icons">
             <div class="icon">
@@ -382,58 +416,36 @@
         </div>
         <div class="navs">
             <div class="nav">
-                <div class="img total"></div>
+                <i class="fab fa-js"></i>
                 <div class="link">Javascript</div>
             </div>
             <div class="nav">
-                <div class="img recieved"></div>
+                <i class="fas fa-mobile-alt"></i>
                 <div class="link">Flutter</div>
             </div>
             <div class="nav">
-                <div class="img saved"></div>
+                <i class="fab fa-react"></i>
                 <div class="link">React</div>
             </div>
             <div class="nav">
-                <div class="img sent"></div>
+                <i class="fas fa-seedling"></i>
                 <div class="link">Spring</div>
             </div>
             <div class="nav">
-                <div class="img temp"></div>
+                <i class="fas fa-fire"></i>
                 <div class="link">Firebase</div>
             </div>
             <div class="nav">
-                <div class="img folder"></div>
-                <div class="link">Oracle</div>
+                <i class="fas fa-database"></i>
+                <div class="link">Database</div>
             </div>
             <div class="nav">
-                <div class="img bill"></div>
-                <div class="link">제작 사이트</div>
+                <i class="fab fa-app-store-ios"></i>
+                <div class="link">Site</div>
             </div>
-        </div>
-        <div class="nav">
-            <div>cyber-i</div>
-            <div>받은메일함</div>
-            <div>내게쓴메일함</div>
-            <div>
-                <div>보낸메일함</div>
-                <div>수신확인</div>
-            </div>
-            <div>임시보관함</div>
-
-        </div>
-        <div class="nav">
-            <div>전체메일</div>
-            <div>받은메일함</div>
-            <div>내게쓴메일함</div>
-            <div>
-                <div>보낸메일함</div>
-                <div>수신확인</div>
-            </div>
-            <div>임시보관함</div>
-
         </div>
     </nav> <!-- 메뉴 -->
-    <article>
+    <article style="display: none">
         <div class="list">
             <div class="item">
                 <div class="from">GitHub</div>
@@ -457,6 +469,91 @@
             </div>
         </div>
     </article> <!-- 본문 -->
+
+    <article>
+        <div class="write">
+            <div class="head">
+                <button type="button" class="btn">저장</button>
+            </div>
+            <div class="compose">
+                <dt class="title">게시판</dt>
+                <dd><select>
+                    <option>javascript</option>
+                    <option>flutter</option>
+                    <option>react</option>
+                    <option>spring</option>
+                    <option>firebase</option>
+                    <option>database</option>
+                    <option>site</option>
+                </select></dd>
+                <dt class="title">받는사람</dt>
+                <dd><input type="text" placeholder="장식용"></dd>
+                <dt class="title">참조</dt>
+                <dd><input type="text" placeholder="장식용"></dd>
+                <dt class="title">제목</dt>
+                <dd><input type="text" placeholder="제목을 입력하세요."></dd>
+                <dt class="title">첨부</dt>
+                <dd><input type="text" placeholder="장식용"></dd>
+            </div>
+            <div class="body">
+                <textarea rows="40" placeholder="글 내용을 입력하세요."></textarea>
+            </div>
+        </div>
+    </article>
     <footer></footer> <!-- 끝머리 -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAlBO0eQIsvlo_aC2ILlI-EeFF3e3w7wWg",
+            authDomain: "yg-b7bfc.firebaseapp.com",
+            databaseURL: "https://yg-b7bfc-default-rtdb.firebaseio.com",
+            projectId: "yg-b7bfc",
+            storageBucket: "yg-b7bfc.appspot.com",
+            messagingSenderId: "900082952918",
+            appId: "1:900082952918:web:eb1fa1f55156eb771ab777",
+            measurementId: "G-FNJ2L44DZG"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var db = firebase.firestore();
+
+        function ins() {
+            db.collection("javascript").add({
+                first: "Ada",
+                last: "Lovelace",
+                born: 1815
+            }).then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+            }).catch((error) => {
+                    console.error("Error adding document: ", error);
+            });
+        }
+
+        function sel() {
+            db.collection("javascript").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    console.log(doc.data());
+                    console.log(`${doc.id} => ${doc.data()}.stringify()`);
+                });
+            });
+        }
+
+        function del() {
+            db.collection("cities").doc("DC").delete().then(() => {
+                console.log("Document successfully deleted!");
+            }).catch((error) => {
+                console.error("Error removing document: ", error);
+            });
+        }
+
+    </script>
 </body>
 </html>
