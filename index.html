@@ -253,6 +253,10 @@
         display: initial;
         bottom: 0;
     }
+    nav .navs .nav .link.on {
+        font-weight: bold;
+        border-bottom: 4px solid #fee500;
+    }
     nav .navs .nav .link:hover {
         font-weight: bold;
         border-bottom: 4px solid #fee500;
@@ -267,6 +271,10 @@
         padding-top: 56px;
         padding-left: 241px;
         box-sizing: border-box;
+        display: none;
+    }
+    article.on{
+        display: block;
     }
     article .list .item {
         position: relative;
@@ -496,7 +504,7 @@
         <div class="navs">
             <div class="nav">
                 <i class="fab fa-js"></i>
-                <div class="link">Javascript</div>
+                <div class="link on">Javascript</div>
             </div>
             <div class="nav">
                 <i class="fas fa-mobile-alt"></i>
@@ -528,7 +536,7 @@
             </div>
         </div>
     </nav>
-    <article class="list" style="display: none">
+    <article class="list on">
         <div class="list">
             <div class="item">
                 <div class="from">GitHub</div>
@@ -552,7 +560,7 @@
             </div>
         </div>
     </article>
-    <article class="write" style="display: none">
+    <article class="write">
         <div class="write">
             <div class="head">
                 <button type="button" class="btn">저장</button>
@@ -610,6 +618,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script>
         var firebaseConfig = {
             apiKey: "AIzaSyAlBO0eQIsvlo_aC2ILlI-EeFF3e3w7wWg",
@@ -655,14 +664,31 @@
             });
         }
 
-        function list() {
+        $('nav .navs .nav .link').click(function() {
+            $('nav .navs .nav .link').removeClass('on');
+            $(this).addClass('on');
+            list();
+        });
 
+        $('nav .button .btn_write').click(function() {
+            write();
+        });
+
+        $('article .list .item').click(function() {
+            view();
+        });
+
+        function list() {
+            $("article").removeClass('on');
+            $("article.list").addClass('on');
         }
         function write() {
-
+            $("article").removeClass('on');
+            $("article.write").addClass('on');
         }
-        function detail() {
-
+        function view() {
+            $("article").removeClass('on');
+            $("article.view").addClass('on');
         }
     </script>
 </body>
