@@ -257,6 +257,9 @@
         font-weight: bold;
         border-bottom: 4px solid #fee500;
     }
+    nav .navs .subtitle {
+        color: #b2b2b2;
+    }
     article {
         overflow: hidden;
         width: 100%;
@@ -318,6 +321,7 @@
         z-index: 20;
         min-width: 765px;
         padding: 14px 28px 12px 15px;
+        border-bottom: 1px solid rgba(237,237,237,0.8);
     }
     article .write .head button {
         overflow: hidden;
@@ -355,6 +359,7 @@
     article .write .compose dd select {
         border: 0;
         height: 34px;
+        width: 100px;
     }
     article .write .compose dd input {
         border: 0;
@@ -369,10 +374,84 @@
         width: 100%;
         border: 0px;
     }
+    article .view {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    article .view .head {
+        position: relative;
+        z-index: 20;
+        min-width: 765px;
+        padding: 14px 28px 12px 15px;
+        border-bottom: 1px solid rgba(237,237,237,0.8);
+    }
+    article .view .head button {
+        overflow: hidden;
+        height: 32px;
+        border-radius: 3px;
+        font-size: 13px;
+        width: 69px;
+        border: 1px solid #4b4f55;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    article .view .head div {
+        line-height: 30px;
+        font-weight: bold;
+        height: 32px;
+        margin-right: 5px;
+        padding: 0 11px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-size: 13px;
+        color: #111;
+        text-align: center;
+        display: inline-block;
+    }
+    article .view .head div:nth-child(5) {
+        float: right;
+    }
+    article .view .head div input {
+        box-shadow: -25px 0 4px 0 rgba(255,255,255,.85);
+        overflow: visible;
+        position: relative;
+        z-index: 20;
+        width: 360px;
+        height: 32px;
+        border-radius: 4px;
+        background-color: #f4f4f4;
+        box-sizing: border-box;
+        float: right;
+        border: 0;
+        padding-left: 10px;
+    }
+    article .view .title {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 700;
+        padding: 20px 15px 15px 15px;
+    }
+    article .view .board {
+        padding: 0 44px 19px 15px;
+        border-bottom: 1px solid rgba(237,237,237,0.8);
+    }
+    article .view .board .name {
+        display: inline-block;
+    }
+    article .view .board .date {
+        color: #959595;
+        vertical-align: top;
+        display: inline-block;
+        float: right;
+    }
+    article .view .body {
+        padding: 15px;
+    }
 </style>
 <body>
     <header>
-        <div class="logo">yg.jung</div>
+        <div class="logo">01.yg.jung</div>
         <div class="nav">
             <div class="item">
                 <div class="img mail"></div>
@@ -390,7 +469,7 @@
                 <div class="img ndrive"></div>
             </div>
         </div>
-    </header> <!-- 첫머리 -->
+    </header>
     <nav>
         <div class="button">
             <button class="btn btn_write">글쓰기</button>
@@ -443,9 +522,13 @@
                 <i class="fab fa-app-store-ios"></i>
                 <div class="link">Site</div>
             </div>
+            <div class="subtitle">
+                이 사이트는 개인 blog로 순수 javascript로 제작되었으며,
+                mail.kakao.com site의 ui를 참고하여 제작하였습니다.
+            </div>
         </div>
-    </nav> <!-- 메뉴 -->
-    <article style="display: none">
+    </nav>
+    <article class="list" style="display: none">
         <div class="list">
             <div class="item">
                 <div class="from">GitHub</div>
@@ -468,9 +551,8 @@
                 <div class="date">21.04.16 14:51</div>
             </div>
         </div>
-    </article> <!-- 본문 -->
-
-    <article>
+    </article>
+    <article class="write" style="display: none">
         <div class="write">
             <div class="head">
                 <button type="button" class="btn">저장</button>
@@ -500,15 +582,35 @@
             </div>
         </div>
     </article>
-    <footer></footer> <!-- 끝머리 -->
+    <article class="view">
+        <div class="view">
+            <div class="head">
+                <button type="button" class="btn">삭제</button>
+                <div>전체답장</div>
+                <div>전달</div>
+                <div>스팸차단</div>
+                <div><input type="text" placeholder="메일 검색"></div>
+            </div>
+            <div class="title"><h4>[[한진택배] 메인 > Recent Updates 에서 undefined NOT APPLY 뜨는 현상 문의] 에 대한 새로운 코멘트가 등록되었습니다.</h4></div>
+            <div class="board">
+                <div class="name">게시판 javascript</div>
+                <div class="date">21.04.19 09:50</div>
+            </div>
+            <div class="body">
+                <span style="color: #1b3d70">애러</span>는 아니고, recentUpdate 항목이 없을 경우에 undefined 로 표시가 됩니다. <br>
+                항목이 나오지 않도록 하거나, 또는 항목이 없다고 표시가 나오도록 추후 업데이트시 수정 조치하겠습니다. <br>
+                [한진택배] 메인 > Recent Updates 에서 undefined NOT APPLY 뜨는 현상 문의 by : 정영균 <br>
+                아침에 보면 자주 이런 오류가 나타나는데, 다시저장하면 저게 사라집니다. 확인좀해주세요. <br>
+            </div>
+        </div>
+    </article>
+    <footer></footer>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
     <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
             apiKey: "AIzaSyAlBO0eQIsvlo_aC2ILlI-EeFF3e3w7wWg",
             authDomain: "yg-b7bfc.firebaseapp.com",
@@ -519,7 +621,6 @@
             appId: "1:900082952918:web:eb1fa1f55156eb771ab777",
             measurementId: "G-FNJ2L44DZG"
         };
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
 
@@ -554,6 +655,15 @@
             });
         }
 
+        function list() {
+
+        }
+        function write() {
+
+        }
+        function detail() {
+
+        }
     </script>
 </body>
 </html>
