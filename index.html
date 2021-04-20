@@ -754,14 +754,15 @@
             ins();
         });
 
+        /* 나비 메뉴 hover */
         $('nav .navs .nav').on('mouseenter',function() {
             $(this).children().last().addClass('on');
         });
-
         $('nav .navs .nav').on('mouseleave',function() {
             $(this).children().last().removeClass('on');
         });
 
+        /* 나비 메뉴 클릭 이벤트 */
         $('nav .navs .nav').on('click',function() {
             $('nav .navs .nav .link').removeClass('active');
             $(this).children().last().addClass('active');
@@ -769,10 +770,12 @@
             list(board);
         });
 
+        /* 저장 버튼 클릭 이벤트 */
         $(document).on('click', 'nav .button .btn_write', function() {
             write();
         });
 
+        /* 리스트의 항목 클릭 이벤트 */
         $(document).on('click', 'article .list .item', function() {
             var id = $(this).attr('id')
             sel(board, id);
