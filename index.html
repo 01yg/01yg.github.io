@@ -722,6 +722,7 @@
 
         /* 리스트 렌더링 */
         function listRendering(id, board, title, date) {
+            $('article .list').html('');
             var item = $('<div class="item" id="'+id+'"></div>');
             item.append($(`<div class="from">${board}</div>`));
             item.append($(`<div class="title">${title}</div>`));
@@ -799,7 +800,6 @@
 
         /* 화면 이동 */
         function list() {
-            $('article .list').html('');
             $("article").removeClass('on');
             $("article.list").addClass('on');
         }
