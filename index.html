@@ -707,6 +707,7 @@
 
         function sellist(board) {
             db.collection(board).get().then((querySnapshot) => {
+                $('article .list').html('');
                 querySnapshot.forEach((doc) => {
                     listRendering(doc.id, board, doc.data().title, doc.data().date);
                 });
@@ -722,7 +723,6 @@
 
         /* 리스트 렌더링 */
         function listRendering(id, board, title, date) {
-            $('article .list').html('');
             var item = $('<div class="item" id="'+id+'"></div>');
             item.append($(`<div class="from">${board}</div>`));
             item.append($(`<div class="title">${title}</div>`));
