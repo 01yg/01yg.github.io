@@ -257,7 +257,7 @@
         font-weight: bold;
         border-bottom: 4px solid #fee500;
     }
-    nav .navs .nav .link:hover {
+    nav .navs .nav .link.active {
         font-weight: bold;
         border-bottom: 4px solid #fee500;
     }
@@ -456,6 +456,44 @@
     article .view .body {
         padding: 15px;
     }
+    loading {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background-color: #fbfbfb;
+        display: none;
+    }
+    loading.on {
+        display: contents;
+    }
+    loading div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 262px;
+        height: 76px;
+        background-color: white;
+        border: 1px solid #e6e5e5;
+        border-radius: 3px;
+        background-image: url(./img/loading.gif);
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-position: -51px -67px;
+    }
+    loading div p {
+        position: absolute;
+        top: 28px;
+        left: 100px;
+    }
 </style>
 <body>
     <header>
@@ -504,7 +542,7 @@
         <div class="navs">
             <div class="nav">
                 <i class="fab fa-js"></i>
-                <div class="link on">Javascript</div>
+                <div class="link active">Javascript</div>
             </div>
             <div class="nav">
                 <i class="fas fa-mobile-alt"></i>
@@ -538,56 +576,38 @@
     </nav>
     <article class="list on">
         <div class="list">
-            <div class="item">
-                <div class="from">GitHub</div>
-                <div class="title">[GitHub] Please verify your email address.</div>
-                <div class="date">21.04.16 14:51</div>
-            </div>
-            <div class="item">
-                <div class="from">solution@cyber0-i.com</div>
-                <div class="title">새로운 게시물 [webPonent Grid 문의(2)_코드네임]이 등록되었습니다.</div>
-                <div class="date">21.04.16 14:51</div>
-            </div>
-            <div class="item">
-                <div class="from">Ranorex Team</div>
-                <div class="title">New Webinar: Automated Test Reporting April 21st</div>
-                <div class="date">21.04.16 14:51</div>
-            </div>
-            <div class="item">
-                <div class="from">solution@cyber0-i.com</div>
-                <div class="title">새로운 게시물 [webPonent Grid 문의(2)_코드네임]이 등록되었습니다.</div>
-                <div class="date">21.04.16 14:51</div>
-            </div>
         </div>
     </article>
     <article class="write">
         <div class="write">
-            <div class="head">
-                <button type="button" class="btn">저장</button>
-            </div>
-            <div class="compose">
-                <dt class="title">게시판</dt>
-                <dd><select>
-                    <option>javascript</option>
-                    <option>flutter</option>
-                    <option>react</option>
-                    <option>spring</option>
-                    <option>firebase</option>
-                    <option>database</option>
-                    <option>site</option>
-                </select></dd>
-                <dt class="title">받는사람</dt>
-                <dd><input type="text" placeholder="장식용"></dd>
-                <dt class="title">참조</dt>
-                <dd><input type="text" placeholder="장식용"></dd>
-                <dt class="title">제목</dt>
-                <dd><input type="text" placeholder="제목을 입력하세요."></dd>
-                <dt class="title">첨부</dt>
-                <dd><input type="text" placeholder="장식용"></dd>
-            </div>
-            <div class="body">
-                <textarea rows="40" placeholder="글 내용을 입력하세요."></textarea>
-            </div>
+            <form id="frm">
+                <div class="head">
+                    <button type="submit" class="btn">저장</button>
+                </div>
+                <div class="compose">
+                    <dt class="title">게시판</dt>
+                    <dd><select name="board">
+                        <option value="javascript">javascript</option>
+                        <option value="flutter">flutter</option>
+                        <option value="react">react</option>
+                        <option value="spring">spring</option>
+                        <option value="firebase">firebase</option>
+                        <option value="database">database</option>
+                        <option value="site">site</option>
+                    </select></dd>
+                    <dt class="title">받는사람</dt>
+                    <dd><input type="text" placeholder="장식용"></dd>
+                    <dt class="title">참조</dt>
+                    <dd><input type="text" placeholder="장식용"></dd>
+                    <dt class="title">제목</dt>
+                    <dd><input type="text" placeholder="제목을 입력하세요." name="title"></dd>
+                    <dt class="title">첨부</dt>
+                    <dd><input type="text" placeholder="장식용"></dd>
+                </div>
+                <div class="body">
+                    <textarea rows="40" placeholder="글 내용을 입력하세요." name="content"></textarea>
+                </div>
+            </form>
         </div>
     </article>
     <article class="view">
@@ -612,14 +632,42 @@
             </div>
         </div>
     </article>
+    <loading>
+            <div>
+                <p>잠시만 기다려주세요.</p>
+            </div>
+    </loading>
     <footer></footer>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        var board = 'javascript';
+
+        /* json */
+        jQuery.fn.serializeObject = function() {
+            var obj = null;
+            try {
+                if (this[0].tagName && this[0].tagName.toUpperCase() == "FORM") {
+                    var arr = this.serializeArray();
+                    if (arr) {
+                        obj = {};
+                        jQuery.each(arr, function() {
+                            obj[this.name] = this.value;
+                        });
+                    }//if ( arr ) {
+                }
+            } catch (e) {
+                alert(e.message);
+            } finally {
+            }
+
+            return obj;
+        };
+
         var firebaseConfig = {
             apiKey: "AIzaSyAlBO0eQIsvlo_aC2ILlI-EeFF3e3w7wWg",
             authDomain: "yg-b7bfc.firebaseapp.com",
@@ -635,25 +683,61 @@
 
         var db = firebase.firestore();
 
+        sellist(board);
+
         function ins() {
-            db.collection("javascript").add({
-                first: "Ada",
-                last: "Lovelace",
-                born: 1815
+            var json = $('form').serializeObject();
+
+            $("loading").addClass('on');
+
+            db.collection(json.board).add({
+                title: json.title,
+                content: json.content,
+                date: dateToString()
             }).then((docRef) => {
-                console.log("Document written with ID: ", docRef.id);
+                $("loading").removeClass('on');
+                alert('정상 등록되었습니다 (등록 아이디 : ' + docRef.id + ')');
+                list();
             }).catch((error) => {
-                    console.error("Error adding document: ", error);
+                $("loading").removeClass('on');
+                alert('등록에 실패하였습니다 (애러 코드 : ' + error + ')');
+                list();
             });
         }
 
-        function sel() {
-            db.collection("javascript").get().then((querySnapshot) => {
+        function sellist(board) {
+            db.collection(board).get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    console.log(doc.data());
-                    console.log(`${doc.id} => ${doc.data()}.stringify()`);
+                    domAdd(doc.id, board, doc.data().title, doc.data().date);
                 });
             });
+        }
+
+        function sel(board,id) {
+            db.collection(board).doc(id).get().then((doc) => {
+                var data = doc.data();
+                viewRendering(doc.id, data.title, data.board, data.date, data.content);
+            });
+        }
+
+        function domAdd(id, board, title, date) {
+            var item = $('<div class="item" id="'+id+'"></div>');
+            item.append($(`<div class="from">${board}</div>`));
+            item.append($(`<div class="title">${title}</div>`));
+            item.append($(`<div class="date">${date}</div>`));
+            $('article .list').append(item);
+        }
+
+        function viewRendering(id, title, board, date, content) {
+            $('article .view .title h4').html(title);
+            $('article .view .board .name').html('게시판' + board);
+            $('article .view .board .date').html(date);
+            $('article .view .body').html(content);
+            view();
+        }
+
+        function viewClear() {
+            viewRendering('','','','');
         }
 
         function del() {
@@ -664,32 +748,67 @@
             });
         }
 
-        $('nav .navs .nav .link').click(function() {
-            $('nav .navs .nav .link').removeClass('on');
-            $(this).addClass('on');
-            list();
+        $('#frm').submit(function(event) {
+            event.preventDefault();
+            /* firebase 입력 */
+            ins();
         });
 
-        $('nav .button .btn_write').click(function() {
+        $('nav .navs .nav').on('mouseenter',function() {
+            $(this).children().last().addClass('on');
+        });
+
+        $('nav .navs .nav').on('mouseleave',function() {
+            $(this).children().last().removeClass('on');
+        });
+
+        $('nav .navs .nav').on('click',function() {
+            $('nav .navs .nav .link').removeClass('active');
+            $(this).children().last().addClass('active');
+            board = $(this).children().last().html().toLowerCase();
+            list(board);
+        });
+
+        $(document).on('click', 'nav .button .btn_write', function() {
             write();
         });
 
-        $('article .list .item').click(function() {
-            view();
+        $(document).on('click', 'article .list .item', function() {
+            var id = $(this).attr('id')
+            sel(board, id);
         });
 
-        function list() {
+        /* 화면 이동 */
+        function list(board) {
+            $('article .list').html('');
             $("article").removeClass('on');
             $("article.list").addClass('on');
+            sellist(board);
         }
+
+        /* 화면 이동 */
         function write() {
             $("article").removeClass('on');
             $("article.write").addClass('on');
         }
+
+        /* 화면 이동 */
         function view() {
             $("article").removeClass('on');
             $("article.view").addClass('on');
         }
+
+        /* 현재시간 알아내기 */
+        function dateToString() {
+            var pDate = new Date();
+            var yyyy = pDate.getFullYear();
+            var yy = String(yyyy).slice(-2);
+            var mm = pDate.getMonth() < 9 ? "0" + (pDate.getMonth() + 1) : (pDate.getMonth() + 1); // getMonth() is zero-based
+            var dd  = pDate.getDate() < 10 ? "0" + pDate.getDate() : pDate.getDate();
+            var hh = pDate.getHours() < 10 ? "0" + pDate.getHours() : pDate.getHours();
+            var min = pDate.getMinutes() < 10 ? "0" + pDate.getMinutes() : pDate.getMinutes();
+            return "".concat(yy).concat(".").concat(mm).concat(".").concat(dd).concat(" ").concat(hh).concat(":").concat(min);
+        };
     </script>
 </body>
 </html>
