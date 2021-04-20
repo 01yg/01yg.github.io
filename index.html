@@ -727,6 +727,8 @@
             item.append($(`<div class="title">${title}</div>`));
             item.append($(`<div class="date">${date}</div>`));
             $('article .list').append(item);
+
+            list();
         }
 
         /* 상세 회면 렌더링 */
@@ -745,8 +747,10 @@
         function del() {
             db.collection(board).doc(id).delete().then(() => {
                 console.log("Document successfully deleted!");
+                sellist(board);
             }).catch((error) => {
                 console.error("Error removing document: ", error);
+                sellist(board);
             });
         }
 
@@ -769,7 +773,11 @@
             $('nav .navs .nav .link').removeClass('active');
             $(this).children().last().addClass('active');
             board = $(this).children().last().html().toLowerCase();
-            list(board);
+
+            sellist(board);
+
+            // 화면 이동 하려고 하는데 그 전에
+            //list(board);
         });
 
         /* 삭제 버튼 클릭 이벤트 */
@@ -784,16 +792,16 @@
 
         /* 리스트의 항목 클릭 이벤트 */
         $(document).on('click', 'article .list .item', function() {
-            id = $(this).attr('id')
+            id = $(this).attr('id');
+            // 데이터 가져오기
             sel(board, id);
         });
 
         /* 화면 이동 */
-        function list(board) {
+        function list() {
             $('article .list').html('');
             $("article").removeClass('on');
             $("article.list").addClass('on');
-            sellist(board);
         }
 
         /* 화면 이동 */
