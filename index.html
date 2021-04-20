@@ -717,7 +717,7 @@
         function sel(board,id) {
             db.collection(board).doc(id).get().then((doc) => {
                 var data = doc.data();
-                viewRendering(doc.id, data.title, data.board, data.date, data.content);
+                viewRendering(doc.id, data.title, board, data.date, data.content);
             });
         }
 
