@@ -646,8 +646,9 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         var board = 'javascript';
+        var id;
 
-        /* json */
+        /* form 에서 json 형으로 데이터 가져오기 */
         jQuery.fn.serializeObject = function() {
             var obj = null;
             try {
@@ -664,7 +665,6 @@
                 alert(e.message);
             } finally {
             }
-
             return obj;
         };
 
@@ -708,7 +708,7 @@
         function sellist(board) {
             db.collection(board).get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    domAdd(doc.id, board, doc.data().title, doc.data().date);
+                    listRendering(doc.id, board, doc.data().title, doc.data().date);
                 });
             });
         }
@@ -720,7 +720,8 @@
             });
         }
 
-        function domAdd(id, board, title, date) {
+        /* 리스트 렌더링 */
+        function listRendering(id, board, title, date) {
             var item = $('<div class="item" id="'+id+'"></div>');
             item.append($(`<div class="from">${board}</div>`));
             item.append($(`<div class="title">${title}</div>`));
@@ -728,6 +729,7 @@
             $('article .list').append(item);
         }
 
+        /* 상세 회면 렌더링 */
         function viewRendering(id, title, board, date, content) {
             $('article .view .title h4').html(title);
             $('article .view .board .name').html('게시판' + board);
@@ -741,7 +743,7 @@
         }
 
         function del() {
-            db.collection("cities").doc("DC").delete().then(() => {
+            db.collection(board).doc(id).delete().then(() => {
                 console.log("Document successfully deleted!");
             }).catch((error) => {
                 console.error("Error removing document: ", error);
@@ -770,6 +772,11 @@
             list(board);
         });
 
+        /* 삭제 버튼 클릭 이벤트 */
+        $(document).on('click', 'article .view .head button', function() {
+            del();
+        });
+
         /* 저장 버튼 클릭 이벤트 */
         $(document).on('click', 'nav .button .btn_write', function() {
             write();
@@ -777,7 +784,7 @@
 
         /* 리스트의 항목 클릭 이벤트 */
         $(document).on('click', 'article .list .item', function() {
-            var id = $(this).attr('id')
+            id = $(this).attr('id')
             sel(board, id);
         });
 
