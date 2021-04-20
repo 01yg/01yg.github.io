@@ -711,6 +711,7 @@
                 querySnapshot.forEach((doc) => {
                     listRendering(doc.id, board, doc.data().title, doc.data().date);
                 });
+                list();
             });
         }
 
@@ -728,8 +729,6 @@
             item.append($(`<div class="title">${title}</div>`));
             item.append($(`<div class="date">${date}</div>`));
             $('article .list').append(item);
-
-            list();
         }
 
         /* 상세 회면 렌더링 */
