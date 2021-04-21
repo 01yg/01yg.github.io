@@ -683,7 +683,7 @@
 
         var db = firebase.firestore();
 
-        sellist(board);
+        sellist();
 
         function ins() {
             var json = $('form').serializeObject();
@@ -697,28 +697,45 @@
             }).then((docRef) => {
                 $("loading").removeClass('on');
                 alert('정상 등록되었습니다 (등록 아이디 : ' + docRef.id + ')');
-                list();
+                sellist();
             }).catch((error) => {
                 $("loading").removeClass('on');
                 alert('등록에 실패하였습니다 (애러 코드 : ' + error + ')');
-                list();
+                sellist();
             });
         }
 
-        function sellist(board) {
+        function sellist() {
+            $("loading").addClass('on');
             db.collection(board).get().then((querySnapshot) => {
                 $('article .list').html('');
                 querySnapshot.forEach((doc) => {
                     listRendering(doc.id, board, doc.data().title, doc.data().date);
                 });
                 list();
+                $("loading").removeClass('on');
             });
         }
 
         function sel(board,id) {
+            $("loading").addClass('on');
             db.collection(board).doc(id).get().then((doc) => {
                 var data = doc.data();
                 viewRendering(doc.id, data.title, board, data.date, data.content);
+                $("loading").removeClass('on');
+            });
+        }
+
+        function del() {
+            $("loading").addClass('on');
+            db.collection(board).doc(id).delete().then(() => {
+                $("loading").removeClass('on');
+                alert('정상 삭제되었습니다');
+                sellist();
+            }).catch((error) => {
+                $("loading").removeClass('on');
+                alert('삭제에 실패하였습니다 (애러 코드 : ' + error + ')');
+                sellist();
             });
         }
 
@@ -744,16 +761,6 @@
             viewRendering('','','','');
         }
 
-        function del() {
-            db.collection(board).doc(id).delete().then(() => {
-                console.log("Document successfully deleted!");
-                sellist(board);
-            }).catch((error) => {
-                console.error("Error removing document: ", error);
-                sellist(board);
-            });
-        }
-
         $('#frm').submit(function(event) {
             event.preventDefault();
             /* firebase 입력 */
@@ -774,7 +781,7 @@
             $(this).children().last().addClass('active');
             board = $(this).children().last().html().toLowerCase();
 
-            sellist(board);
+            sellist();
 
             // 화면 이동 하려고 하는데 그 전에
             //list(board);
