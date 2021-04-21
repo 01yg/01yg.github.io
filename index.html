@@ -67,6 +67,12 @@
     input:focus, textarea:focus, select:focus {
         outline:none;
     }
+    code {
+        background: #474747;
+        display: block;
+        padding: 10px;
+        color: white;
+    }
     header {
         position: fixed;
         top: 0;
@@ -693,6 +699,7 @@
                 <div class="date"></div>
             </div>
             <div class="body">
+                <pre></pre>
             </div>
         </div>
     </article>
@@ -868,7 +875,7 @@
             $('article .view .title h4').html(title);
             $('article .view .board .name').html('게시판' + board);
             $('article .view .board .date').html(date);
-            $('article .view .body').html(content);
+            $('article .view .body pre').html(content);
             moveview();
         }
 
