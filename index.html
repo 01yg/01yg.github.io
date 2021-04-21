@@ -902,6 +902,13 @@
             moveup();
         }
 
+        /* 쓰기 회면 렌더링 */
+        function writeRendering(title, board, content) {
+            $('article .write .compose select').val(board);
+            $('article .write .compose input[name=title]').val(title);
+            $('article .write .body textarea').val(content);
+        }
+
         /* 상세화면 클리어 */
         function viewClear() {
             viewRendering('','','','');
@@ -975,6 +982,7 @@
 
         /* 쓰기 버튼 클릭 이벤트 */
         $(document).on('click', 'nav .button .btn_write', function() {
+            writeRendering('', 'javascript', '')
             movewrite();
         });
 
