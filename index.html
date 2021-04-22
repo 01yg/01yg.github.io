@@ -6,181 +6,16 @@
     <link rel="stylesheet" href="./fontawesome/css/all.css">
     <link rel="stylesheet" href="./css/01yg.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <script src="./js/includeHTML.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">01.yg.jung</div>
-        <div class="nav">
-            <div class="item">
-                <div class="img mail"></div>
-            </div>
-            <div class="item">
-                <div class="img calendar"></div>
-            </div>
-            <div class="item">
-                <div class="img memo"></div>
-            </div>
-            <div class="item">
-                <div class="img contact"></div>
-            </div>
-            <div class="item">
-                <div class="img ndrive"></div>
-            </div>
-        </div>
-    </header>
-    <nav>
-        <div class="button">
-            <button class="btn btn_write">글쓰기</button>
-            <button class="btn btn_my" disabled>내게쓰기</button>
-        </div>
-        <div class="icons">
-            <div class="icon">
-                <span class="img interest"></span>
-                <span class="txt_util">관심친구</span>
-            </div>
-            <div class="icon">
-                <span class="img read"></span>
-                <span class="txt_util">안읽음</span>
-            </div>
-            <div class="icon">
-                <span class="img important"></span>
-                <span class="txt_util">중요</span>
-            </div>
-            <div class="icon">
-                <span class="img file"></span>
-                <span class="txt_util">첨부</span>
-            </div>
-        </div>
-        <div class="navs">
-            <div class="nav">
-                <i class="fab fa-js"></i>
-                <div class="link active">Javascript</div>
-            </div>
-            <div class="nav">
-                <i class="fas fa-mobile-alt"></i>
-                <div class="link">Flutter</div>
-            </div>
-            <div class="nav">
-                <i class="fab fa-react"></i>
-                <div class="link">React</div>
-            </div>
-            <div class="nav">
-                <i class="fas fa-seedling"></i>
-                <div class="link">Spring</div>
-            </div>
-            <div class="nav">
-                <i class="fas fa-fire"></i>
-                <div class="link">Firebase</div>
-            </div>
-            <div class="nav">
-                <i class="fas fa-database"></i>
-                <div class="link">Database</div>
-            </div>
-            <div class="nav">
-                <i class="fab fa-app-store-ios"></i>
-                <div class="link">Site</div>
-            </div>
-            <div class="subtitle">
-                이 사이트는 개인 blog로 순수 javascript로 제작되었으며,
-                mail.kakao.com site의 ui를 참고하여 제작하였습니다.
-            </div>
-        </div>
-    </nav>
-    <article class="list on">
-        <div class="list">
-        </div>
-    </article>
-    <article class="write">
-        <div class="write">
-            <form id="frm">
-                <div class="head">
-                    <button type="submit" class="btn">저장</button>
-                </div>
-                <div class="compose">
-                    <dt class="title">게시판</dt>
-                    <dd><select name="board">
-                        <option value="javascript">javascript</option>
-                        <option value="flutter">flutter</option>
-                        <option value="react">react</option>
-                        <option value="spring">spring</option>
-                        <option value="firebase">firebase</option>
-                        <option value="database">database</option>
-                        <option value="site">site</option>
-                    </select></dd>
-                    <dt class="title">받는사람</dt>
-                    <dd><input type="text" placeholder="장식용"></dd>
-                    <dt class="title">참조</dt>
-                    <dd><input type="text" placeholder="장식용"></dd>
-                    <dt class="title">제목</dt>
-                    <dd><input type="text" placeholder="제목을 입력하세요." name="title"></dd>
-                    <dt class="title">첨부</dt>
-                    <dd><input type="text" placeholder="장식용"></dd>
-                </div>
-                <div class="tool">
-                    <input class="file" name="img" type="file" accept="image/*">
-                </div>
-                <div class="body">
-                    <textarea rows="40" placeholder="글 내용을 입력하세요." name="content"></textarea>
-                </div>
-            </form>
-        </div>
-    </article>
-    <article class="view">
-        <div class="view">
-            <div class="head">
-                <button type="button" class="btn del">삭제</button>
-                <button type="button" class="btn up">수정</button>
-                <div>전달</div>
-                <div>스팸차단</div>
-                <div><input type="text" placeholder="메일 검색"></div>
-            </div>
-            <div class="title"><h4></h4></div>
-            <div class="board">
-                <div class="name"></div>
-                <div class="date"></div>
-            </div>
-            <div class="body">
-                <pre></pre>
-            </div>
-        </div>
-    </article>
-    <article class="up">
-        <div class="up">
-            <form id="up_frm">
-                <div class="head">
-                    <button type="submit" class="btn">저장</button>
-                </div>
-                <div class="compose">
-                    <dt class="title">게시판</dt>
-                    <dd><select name="board">
-                        <option value="javascript">javascript</option>
-                        <option value="flutter">flutter</option>
-                        <option value="react">react</option>
-                        <option value="spring">spring</option>
-                        <option value="firebase">firebase</option>
-                        <option value="database">database</option>
-                        <option value="site">site</option>
-                    </select></dd>
-                    <dt class="title">받는사람</dt>
-                    <dd><input type="text" placeholder="장식용"></dd>
-                    <dt class="title">참조</dt>
-                    <dd><input type="text" placeholder="장식용"></dd>
-                    <dt class="title">제목</dt>
-                    <dd><input type="text" placeholder="제목을 입력하세요." name="title"></dd>
-                    <dt class="title">첨부</dt>
-                    <dd><input type="text" placeholder="장식용"></dd>
-                </div>
-                <div class="body">
-                    <textarea rows="40" placeholder="글 내용을 입력하세요." name="content"></textarea>
-                </div>
-            </form>
-        </div>
-    </article>
-    <loading>
-            <div>
-                <p>잠시만 기다려주세요.</p>
-            </div>
-    </loading>
+    <header include-html="./html/header.html"></header>
+    <nav include-html="./html/nav.html"></nav>
+    <article class="list on" include-html="./html/article.list.html"></article>
+    <article class="write" include-html="./html/article.write.html"></article>
+    <article class="view" include-html="./html/article.view.html"></article>
+    <article class="up" include-html="./html/article.up.html"></article>
+    <loading include-html="./html/loading.html"></loading>
     <footer></footer>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
@@ -189,6 +24,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/firebase.setting.js"></script>
+    <script type="text/javascript" src="./js/firebase.dml.js"></script>
+    <script type="text/javascript" src="./js/01yg.rendering.js"></script>
+    <script type="text/javascript" src="./js/01yg.event.js"></script>
     <script type="text/javascript" src="./js/01yg.js"></script>
 </body>
 </html>
