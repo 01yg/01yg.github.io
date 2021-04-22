@@ -1,6 +1,7 @@
 /* 텍스트에 이미지 포함 */
 function imgRendering(url) {
     $('article .write .body textarea').val($('article .write .body textarea').val() + `\n<img src=${url}>\n`);
+    $('article .up .body textarea').val($('article .up .body textarea').val() + `\n<img src=${url}>\n`);
 }
 
 /* 리스트 렌더링 */
