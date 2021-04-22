@@ -1,26 +1,26 @@
 /* 저장 버튼 이벤트 */
-$('#frm').submit(function(event) {
+$(document).on('submit','#frm',function(event) {
     event.preventDefault();
     /* firebase 입력 */
     ins();
 });
 
 /* 수정의 저장 버튼 클릭 이벤트 */
-$('#up_frm').submit(function(event) {
+$(document).on('submit','#up_frm',function(event) {
     event.preventDefault();
     up();
 });
 
 /* 나비 메뉴 hover 이벤트 */
-$('nav .navs .nav').on('mouseenter',function() {
+$(document).on('mouseenter','nav .navs .nav',function() {
     $(this).children().last().addClass('on');
 });
-$('nav .navs .nav').on('mouseleave',function() {
+$(document).on('mouseleave','nav .navs .nav',function() {
     $(this).children().last().removeClass('on');
 });
 
 /* 나비 메뉴 클릭 이벤트 */
-$('nav .navs .nav').on('click',function() {
+$(document).on('click','nav .navs .nav',function() {
     $('nav .navs .nav .link').removeClass('active');
     $(this).children().last().addClass('active');
     board = $(this).children().last().html().toLowerCase();
@@ -32,7 +32,7 @@ $('nav .navs .nav').on('click',function() {
 });
 
 /* 파일 선택과 동시에 저장 */
-$('input[type=file]').change(function(e) {
+$(document).on('change','input[type=file]',function(e) {
     selectfile = $(this)[0].files[0];
     upfile(selectfile);
 });
