@@ -11,3 +11,8 @@ $(document).on('click', 'article .view .head button.up', function() {
         upRendering(doc.id, data.title, board, data.date, data.content);
     });
 });
+
+/* 리스트 버튼 클릭 이벤트 */
+$(document).on('click', 'article .view .head button.movelist', function() {
+    movelist();
+});
