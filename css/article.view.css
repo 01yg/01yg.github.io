@@ -33,23 +33,6 @@ article .view .head div {
     text-align: center;
     display: inline-block;
 }
-article .view .head div:nth-child(5) {
-    float: right;
-}
-article .view .head div input {
-    box-shadow: -25px 0 4px 0 rgba(255,255,255,.85);
-    overflow: visible;
-    position: relative;
-    z-index: 20;
-    width: 360px;
-    height: 32px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-    box-sizing: border-box;
-    float: right;
-    border: 0;
-    padding-left: 10px;
-}
 article .view .title {
     font-size: 18px;
     line-height: 28px;

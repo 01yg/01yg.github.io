@@ -44,10 +44,10 @@ function up() {
 function sellist() {
     $("loading").addClass('on');
     db.collection(board).orderBy('date', 'desc').get().then((querySnapshot) => {
-        $('article .list').html('');
-    querySnapshot.forEach((doc) => {
-        listRendering(doc.id, board, doc.data().title, doc.data().date);
-});
+        $('article .list .lists').html('');
+        querySnapshot.forEach((doc) => {
+            listRendering(doc.id, board, doc.data().title, doc.data().date);
+    });
     movelist();
     $("loading").removeClass('on');
 });

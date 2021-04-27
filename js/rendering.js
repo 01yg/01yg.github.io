@@ -6,13 +6,14 @@ function imgRendering(url) {
 
 /* 리스트 렌더링 */
 function listRendering(id, board, title, date) {
+    var dom = $('article .list .lists');
     $('article').scrollTop(0);
 
     var item = $('<div class="item" id="'+id+'"></div>');
     item.append($(`<div class="from">${board}</div>`));
     item.append($(`<div class="title">${title}</div>`));
     item.append($(`<div class="date">${date}</div>`));
-    $('article .list .lists').append(item);
+    dom.append(item);
 }
 
 /* 상세 회면 렌더링 */
