@@ -41,12 +41,32 @@ function up() {
 }
 
 /* 게시물 리스트 가져오기 */
-function sellist() {
+function sellist(searchword = '') {
     $("loading").addClass('on');
     db.collection(board).orderBy('date', 'desc').get().then((querySnapshot) => {
         $('article .list .lists').html('');
-        querySnapshot.forEach((doc) => {
-            listRendering(doc.id, board, doc.data().title, doc.data().date);
+
+        /* json 으로 변경 */
+        var docs = querySnapshot.docs.map(function (doc) {
+            var temp = doc.data()
+            temp.id = doc.id;
+            return temp;
+        });
+
+        /* 검색 */
+        docs = docs.filter(function(doc) {
+            var bool = doc.title.indexOf(searchword) != -1 || searchword == '';
+
+            console.log(bool);
+
+            return bool;
+        });
+
+        console.log(docs);
+
+
+        docs.forEach((doc) => {
+            listRendering(doc.id, board, doc.title, doc.date);
     });
     movelist();
     $("loading").removeClass('on');
