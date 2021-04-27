@@ -36,6 +36,18 @@ header .nav .item {
     zoom: 1;
     text-align: center;
 }
+header .nav .item i {
+    font-size: x-large;
+    color: #b2b2b2;
+    padding-top: 4px;
+}
+header .nav .item i.on {
+    color: #111111;
+}
+header .nav .item i:hover {
+    color: #111111;
+    cursor: pointer;
+}
 header .nav .item .img {
     background-image: url(https://ssl.pstatic.net/static/pwe/common/sp_pnb_d4f0e846.png);
     background-size: 312px 256px;
