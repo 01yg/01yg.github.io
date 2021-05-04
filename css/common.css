@@ -67,21 +67,33 @@ code {
 pre img {
     max-width: 100%;
 }
-article {
-    overflow: scroll;
-    width: calc(100vw - 241px);
-    height: calc(100vh - 56px);
-    box-sizing: border-box;
-    display: none;
-    position: fixed;
-    top: 56px;
-    left: 241px;
-}
-article.on{
-    display: block;
-}
 
-@media ( min-width: 768px ) {
+
+@media ( min-width: 0px ) {
+    article {
+        overflow: scroll;
+        height: calc(100vh - 94px);
+        box-sizing: border-box;
+        display: none;
+        position: fixed;
+        top: 94px;
+    }
+    article.on{
+        display: block;
+    }
 }
 @media ( min-width: 1024px ) {
+    article {
+        overflow: scroll;
+        width: calc(100vw - 241px);
+        height: calc(100vh - 56px);
+        box-sizing: border-box;
+        display: none;
+        position: fixed;
+        top: 56px;
+        left: 241px;
+    }
+    article.on{
+        display: block;
+    }
 }
