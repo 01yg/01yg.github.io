@@ -27,7 +27,7 @@ article .write .compose {
     bottom: 0;
     -webkit-transition: none;
     top: 64px;
-    padding: 0 15px 15px 15px;
+    padding: 0 15px 5px 15px;
 }
 article .write .compose dt {
     position: absolute;
@@ -47,6 +47,7 @@ article .write .compose dd select {
     border: 0;
     height: 34px;
     width: 100px;
+    background: #fff;
 }
 article .write .compose dd input {
     border: 0;
