@@ -89,13 +89,12 @@ pre img {
         position: fixed;
         top: 94px;
     }
+    article::-webkit-scrollbar {
+        display: none;
+    }
     article.on{
         display: block;
         width: 100%;
-    }
-    article.on
-    ::-webkit-scrollbar {
-        display: none;
     }
 }
 @media ( min-width: 1024px ) {
@@ -108,6 +107,9 @@ pre img {
         position: fixed;
         top: 56px;
         left: 241px;
+    }
+    article::-webkit-scrollbar {
+        display: none;
     }
     article.on{
         display: block;
