@@ -52,15 +52,26 @@
         border-top: 0 none;
         margin-top: 0;
         height: 38px;
+        width: 100vw;
+        overflow-y: hidden;
+    }
+    nav .navs::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav .navs .nav-panel {
+        display: inline-block;
+        white-space: nowrap;
+        flex-wrap: wrap;
     }
 
     nav .navs .nav {
         overflow: hidden;
         height: 21px;
-        padding-bottom: 8px;
         line-height: 21px;
         cursor: pointer;
         display: inline-block;
+        padding: 9px;
     }
 
     nav .navs .nav i {
@@ -68,9 +79,9 @@
         overflow: hidden;
         background-size: 400px 500px;
         float: left;
-        margin-right: 7px;
-        margin-top: 3px;
-        width: 14px;
+        margin-right: 5px;
+        margin-top: 4px;
+        width: 20px;
         height: 14px;
         vertical-align: top;
         text-align: center;
@@ -92,6 +103,7 @@
     }
 
     nav .navs .subtitle {
+        display: none;
         color: #b2b2b2;
     }
 }
@@ -206,16 +218,23 @@
         padding: 14px 0 0;
         border-top: 0 none;
         margin-top: 0;
+        width: fit-content;
+        overflow-y: initial;
     }
 
     nav .navs .nav {
         overflow: hidden;
         position: relative;
         height: 21px;
-        padding-bottom: 8px;
         line-height: 21px;
         cursor: pointer;
         display: block;
+        padding: auto;
+        padding: 0 0 8px 0;
+    }
+
+    nav .navs .nav-panel {
+        white-space: initial;
     }
 
     nav .navs .nav i {
@@ -223,9 +242,9 @@
         overflow: hidden;
         background-size: 400px 500px;
         float: left;
-        margin-right: 7px;
-        margin-top: 3px;
-        width: 14px;
+        margin-right: 5px;
+        margin-top: 5px;
+        width: 20px;
         height: 14px;
         vertical-align: top;
         text-align: center;
@@ -247,6 +266,7 @@
     }
 
     nav .navs .subtitle {
+        display: block;
         color: #b2b2b2;
     }
 }

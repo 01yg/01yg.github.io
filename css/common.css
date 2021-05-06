@@ -80,6 +80,11 @@ pre img {
     }
     article.on{
         display: block;
+        width: 100%;
+    }
+    article.on
+    ::-webkit-scrollbar {
+        display: none;
     }
 }
 @media ( min-width: 1024px ) {
@@ -95,5 +100,6 @@ pre img {
     }
     article.on{
         display: block;
+        width: calc(100vw - 240px);
     }
 }
