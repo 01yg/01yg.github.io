@@ -1,6 +1,6 @@
 includeHTML();
 
-var board = 'javascript';
+var board = 'html';
 var id;
 
 /* form 에서 json 형으로 데이터 가져오기 */

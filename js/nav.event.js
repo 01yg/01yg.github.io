@@ -20,6 +20,6 @@ $(document).on('click','nav .navs .nav',function() {
 
 /* 쓰기 버튼 클릭 이벤트 */
 $(document).on('click', 'nav .button .btn_write', function() {
-    writeRendering('', 'javascript', '')
+    writeRendering('', board, '');
     movewrite();
 });
