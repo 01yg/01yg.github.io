@@ -36,6 +36,7 @@
         cursor: pointer;
         overflow: hidden;
         white-space: nowrap;
+        box-sizing: border-box;
     }
 
     article .list .item:hover {
@@ -54,7 +55,7 @@
         overflow: hidden;
         display: inline-block;
         padding: 0 10px;
-        width: calc(100vw - 195px);
+        width: calc(100vw - 197px);
     }
 
     article .list .item .date {

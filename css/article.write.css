@@ -6,8 +6,7 @@ article .write {
 article .write .head {
     position: relative;
     z-index: 20;
-    min-width: 765px;
-    padding: 14px 28px 12px 15px;
+    padding: 12px 15px;
     border-bottom: 1px solid rgba(237,237,237,0.8);
 }
 article .write .head button {

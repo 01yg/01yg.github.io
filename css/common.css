@@ -63,7 +63,18 @@ code {
     display: block;
     padding: 10px;
     color: white;
+    overflow-y: scroll;
+    border-radius: 10px;
 }
+tag {
+    background-color: #fee500;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+pre {
+    white-space: pre-wrap;
+}
+
 pre img {
     max-width: 100%;
 }

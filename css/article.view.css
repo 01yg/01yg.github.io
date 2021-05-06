@@ -6,8 +6,7 @@ article .view {
 article .view .head {
     position: relative;
     z-index: 20;
-    min-width: 765px;
-    padding: 14px 28px 12px 15px;
+    padding: 12px 15px;
     border-bottom: 1px solid rgba(237,237,237,0.8);
 }
 article .view .head button {
@@ -40,7 +39,7 @@ article .view .title {
     padding: 20px 15px 15px 15px;
 }
 article .view .board {
-    padding: 0 44px 19px 15px;
+    padding: 0 15px 19px 15px;
     border-bottom: 1px solid rgba(237,237,237,0.8);
 }
 article .view .board .name {
@@ -54,4 +53,8 @@ article .view .board .date {
 }
 article .view .body {
     padding: 15px;
+}
+article .view img {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #cdcccc;
 }
