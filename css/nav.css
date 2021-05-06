@@ -10,33 +10,13 @@
     }
 
     nav .button {
-        overflow: hidden;
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        z-index: 9999;
+        display: none;
     }
 
     nav .button .btn {
-        overflow: hidden;
-        float: left;
-        position: relative;
-        width: 100px;
-        height: 38px;
-        padding-top: 3px;
-        border-left: 0;
-        border-radius: 0 4px 4px 0;
-        font-weight: bold;
-        font-size: 15px;
-        background-color: #fee500;
-        font-weight: 500;
     }
 
     nav .button .btn_write {
-        width: 98px;
-        border-left: 1px solid rgba(0, 0, 0, .02);
-        border-right: 0;
-        border-radius: 4px 0 0 4px;
     }
 
     nav .button .btn_my {
@@ -128,6 +108,7 @@
     }
 
     nav .button {
+        display: block;
         overflow: hidden;
         position: relative;
         bottom: auto;

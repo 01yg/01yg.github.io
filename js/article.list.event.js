@@ -14,3 +14,8 @@ $(document).on('keyup', 'article .list .bar input', function(e) {
         sellist($(this).val());
     }
 });
+/* 쓰기 버튼 클릭 이벤트 */
+$(document).on('click', 'article .list > button', function() {
+    writeRendering('', 'javascript', '')
+    movewrite();
+});

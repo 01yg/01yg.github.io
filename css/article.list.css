@@ -73,6 +73,16 @@
         text-indent: 10px;
         text-align: right;
     }
+    article .list > button {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 100px;
+        height: 38px;
+        border-radius: 4px;
+        font-size: 15px;
+        background-color: #fee500;
+    }
 }
 @media ( min-width: 1024px ) {
     article .list .bar {
@@ -148,5 +158,8 @@
         color: #888;
         text-indent: 10px;
         text-align: right;
+    }
+    article .list > button {
+        display: none;
     }
 }

@@ -55,7 +55,7 @@ address, caption, cite, code, dfn, em, var {
     font-style: normal;
     font-weight: normal;
 }
-input:focus, textarea:focus, select:focus {
+input:focus, textarea:focus, select:focus, button:focus {
     outline:none;
 }
 code {
