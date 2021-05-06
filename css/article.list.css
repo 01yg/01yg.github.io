@@ -56,6 +56,7 @@
         display: inline-block;
         padding: 0 10px;
         width: calc(100vw - 197px);
+        text-overflow: ellipsis;
     }
 
     article .list .item .date {
