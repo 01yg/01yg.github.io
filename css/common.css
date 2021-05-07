@@ -36,6 +36,9 @@ body {
     height: 100%;
     background: #fff;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 body, th, td, input, select, textarea, button {
     font-size: 14px;
     line-height: 1.5;
@@ -81,13 +84,13 @@ pre img {
 
 
 @media ( min-width: 0px ) {
+    body{
+        margin-top: 94px;
+    }
     article {
         overflow: scroll;
-        height: calc(100vh - 94px);
         box-sizing: border-box;
         display: none;
-        position: fixed;
-        top: 94px;
     }
     article::-webkit-scrollbar {
         display: none;
@@ -98,6 +101,9 @@ pre img {
     }
 }
 @media ( min-width: 1024px ) {
+    body{
+        margin-top: 0px;
+    }
     article {
         overflow: scroll;
         width: calc(100vw - 241px);
