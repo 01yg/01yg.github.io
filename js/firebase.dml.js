@@ -10,13 +10,13 @@ function ins() {
         date: dateToString()
     }).then((docRef) => {
         $("loading").removeClass('on');
-    alert('정상 등록되었습니다 (등록 아이디 : ' + docRef.id + ')');
-    sellist();
-}).catch((error) => {
-        $("loading").removeClass('on');
-    alert('등록에 실패하였습니다 (애러 코드 : ' + error + ')');
-    sellist();
-});
+        alert('정상 등록되었습니다 (등록 아이디 : ' + docRef.id + ')');
+        sellist();
+    }).catch((error) => {
+            $("loading").removeClass('on');
+        alert('등록에 실패하였습니다 (애러 코드 : ' + error + ')');
+        sellist();
+    });
 }
 
 /* 게시물 업데이트 */
@@ -31,13 +31,13 @@ function up() {
         date: dateToString()
     }).then(() => {
         $("loading").removeClass('on');
-    alert('정상 수정되었습니다 (등록 아이디 : ' + id + ')');
-    sellist();
-}).catch((error) => {
-        $("loading").removeClass('on');
-    alert('수정에 실패하였습니다 (애러 코드 : ' + error + ')');
-    sellist();
-});
+        alert('정상 수정되었습니다 (등록 아이디 : ' + id + ')');
+        sellist();
+    }).catch((error) => {
+            $("loading").removeClass('on');
+        alert('수정에 실패하였습니다 (애러 코드 : ' + error + ')');
+        sellist();
+    });
 }
 
 /* 게시물 리스트 가져오기 */
@@ -87,13 +87,13 @@ function del() {
     $("loading").addClass('on');
     db.collection(board).doc(id).delete().then(() => {
         $("loading").removeClass('on');
-    alert('정상 삭제되었습니다');
-    sellist();
-}).catch((error) => {
-        $("loading").removeClass('on');
-    alert('삭제에 실패하였습니다 (애러 코드 : ' + error + ')');
-    sellist();
-});
+        alert('정상 삭제되었습니다');
+        sellist();
+    }).catch((error) => {
+            $("loading").removeClass('on');
+        alert('삭제에 실패하였습니다 (애러 코드 : ' + error + ')');
+        sellist();
+    });
 }
 
 /* 파일 업로드 */
