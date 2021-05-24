@@ -28,7 +28,7 @@ function up() {
     db.collection(json.board).doc(id).set({
         title: json.title,
         content: json.content,
-        date: dateToString()
+        date: json.date
     }).then(() => {
         $("loading").removeClass('on');
         alert('정상 수정되었습니다 (등록 아이디 : ' + id + ')');

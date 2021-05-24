@@ -33,6 +33,7 @@ function upRendering(id, title, board, date, content) {
 
     $('article .up .compose select').val(board);
     $('article .up .compose input[name=title]').val(title);
+    $('article .up .compose input[name=date]').val(date);
     $('article .up .board .name').html('게시판' + board);
     $('article .up .body textarea').val(content);
     moveup();
