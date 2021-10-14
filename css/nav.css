@@ -9,6 +9,10 @@
         overflow: hidden;
         z-index: 999;
     }
+    
+    nav::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
 
     nav .button {
         display: none;
